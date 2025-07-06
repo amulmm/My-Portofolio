@@ -125,7 +125,7 @@ export default function Home() {
                 <div className="flex flex-col items-start">
                   <SplitText
                     text="I'm Achmad Miftahul Ulum"
-                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold"
+                    className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl"
                     delay={50}
                     duration={0.6}
                     ease="power3.out"
@@ -138,14 +138,14 @@ export default function Home() {
                   />
                   <SplitText
                     text="I'm a Medical Technology Student"
-                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold"
+                    className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
                     splitType="chars"
                     from={{ opacity: 0, y: 40 }}
                     to={{ opacity: 1, y: 0 }}
-                    threshold={0.5}
+                    threshold={0.6}
                     rootMargin="-50px"
                     textAlign="left"
                   />
