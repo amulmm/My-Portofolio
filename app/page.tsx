@@ -1,15 +1,12 @@
 import Image from "next/image";
+"use client";
+
 import Lanyard from "./components/Lanyard/Lanyard";
 import RotatingText from "./components/RotatingText/RotatingText";
 import SplitText from "./components/SplitText/SplitText";
 import BlurText from "./components/BlurText/BlurText";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
-import Squares from "./components/Squares/Squares";
 import GradientText from "./components/GradientText/GradientText";
-import TrueFocus from "./components/TrueFocus/TrueFocus";
-import ScrollReveal from "./components/ScrollReveal/ScrollReveal";
-import { Timeline } from "./components/Timelines/Timeline";
-import { BackgroundBeams } from "./components/Beams/BeamsBackground";
 import {
   Navbar,
   NavBody,
@@ -17,65 +14,75 @@ import {
   MobileNav,
   NavbarLogo,
   NavbarButton,
-  MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "./components/ResizableNavbar/ResizableNavbar";
+  MobileNavHeader,
+} from "./components/ResizeableNavibars/ResizeableNavibar";
+import React, { useState } from "react";
+import { BackgroundBeams } from "./components/Beams/BeamsBackground";
+
 import Link from "next/link";
 
 export default function Home() {
-  const data = [
+  const navItems = [
     {
-      title: "2025",
-      content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            For this project, I built a brain tumor detection model using TensorFlow in Python.
-          </p>
-          <div className="grid grid-cols-1 gap-4">
-            <img
-              src="/images/braintumordetection.png"
-              alt="hero template"
-              width={750}
-              height={500}
-              //className="h-full w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-          </div>
-        </div>
-      ),
+      name: "Home",
+      link: "/",
     },
     {
-      title: "2024",
-      content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            My project involved building a pharma chatbot designed to answer patients' questions regarding medicines
-          </p>
-          <div className="grid grid-cols-1 gap-4">
-            <img
-              src="/images/Pharma-Chatbot.png"
-              alt="startup template"
-              width={750}
-              height={500}
-              //className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-          </div>
-        </div>
-      ),
+      name: "About me",
+      link: "/about",
+    },
+    {
+      name: "Resume",
+      link: "/resume/Lebenslauf_Achmad.pdf",
+    },
+    {
+      name: "My Projects",
+      link: "/myproject",
     },
   ];
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <div className="absolute top-0 right-0 left-0 bottom-0 w-full h-full">
+    <div className="overflow-auto md:overflow-hidden md:h-screen md:w-screen">
+      <Navbar className="md:top-20">
+        <NavBody>
+          <NavbarLogo />
+          <NavItems items={navItems} />
+          <NavbarButton>
+            <Link href="https://www.linkedin.com/in/achmad-miftahul-ulum-84b92a237">
+             LinkedIn
+            </Link>
+          </NavbarButton>
+        </NavBody>
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            <NavItems items={navItems} onItemClick={() => setIsMobileMenuOpen(false)} isMobile />
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+      <div className="absolute top-0 right-0 left-0 bottom-0 w-full">
         <BackgroundBeams />
       </div>
-      <div className="container mx-auto h-screen">
-        <div className="grid grid-cols-12">
-          <div className="col-span-5">
-            <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-0 md:pt-5 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+          <div className="md:col-span-5 flex justify-center items-center">
+            <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
           </div>
-          <div className="col-span-6">
-            <div className="flex items-center h-full">
+          <div className="md:col-span-7 flex flex-col justify-center items-start text-left">
+            <div className="flex items-center h-full py-4 md:py-0">
               <div className="flex flex-col gap-4">
                 <AnimatedContent
                   distance={150}
@@ -90,7 +97,7 @@ export default function Home() {
                   scale={1.1}
                 >
                   <div className="flex items-center gap-2">
-                    <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
+                    <h1 className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl">
                       I´m Ready for Job
                     </h1>
                     <RotatingText
@@ -100,13 +107,12 @@ export default function Home() {
                         "Generative Manufacturing",
                         "Ai Development",
                       ]}
-                      mainClassName="px-2 sm:px-2 md:px-3 bg-[#d9d9d9] text-[#000] overflow-hidden py-0.5 py-1 justify-center rounded-lg text-2xl font-bold inline-flex"
+                      mainClassName="px-2 sm:px-2 md:px-3 bg-[#d9d9d9] text-[#000] overflow-hidden py-0.5 py-1 justify-center rounded-lg text-base sm:text-lg md:text-xl lg:text-2xl font-bold inline-flex"
                       staggerFrom={"last"}
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
                       exit={{ y: "-120%" }}
                       staggerDuration={0.025}
-                      splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
                       transition={{
                         type: "spring",
                         damping: 30,
@@ -119,7 +125,7 @@ export default function Home() {
                 <div className="flex flex-col items-start">
                   <SplitText
                     text="I'm Achmad Miftahul Ulum"
-                    className="text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold"
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold"
                     delay={50}
                     duration={0.6}
                     ease="power3.out"
@@ -128,11 +134,11 @@ export default function Home() {
                     to={{ opacity: 1, y: 0 }}
                     threshold={0.2}
                     rootMargin="-50px"
-                    textAlign="center"
+                    textAlign="left"
                   />
                   <SplitText
                     text="I'm a Medical Technology Student"
-                    className="text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold"
+                    className="text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
@@ -141,7 +147,7 @@ export default function Home() {
                     to={{ opacity: 1, y: 0 }}
                     threshold={0.5}
                     rootMargin="-50px"
-                    textAlign="center"
+                    textAlign="left"
                   />
                 </div>
                 <div>
@@ -150,37 +156,34 @@ export default function Home() {
                     delay={75}
                     animateBy="words"
                     direction="top"
-                    className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans"
+                    className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-left font-sans text-sm sm:text-base md:text-lg"
                   />
-                  <div className="flex items-center gap-4">
-                    <Link href="mailto:achmadmiftahululum9@gmail.com">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                    <button
+                      onClick={() => window.location.href = 'mailto:achmadmiftahululum9@gmail.com'}
+                      className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
+                    >
                       <GradientText
                         colors={["#D9D9D9"]}
                         animationSpeed={3}
                         showBorder={false}
-                        className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold"
                       >
                         Contact me now
                       </GradientText>
-                    </Link>
-                    <Link href="https://github.com/amulmm">
+                    </button>
+                    <button
+                      onClick={() => window.open('https://github.com/amulmm', '_blank')}
+                      className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
+                    >
                       <GradientText
                         colors={["#D9D9D9"]}
                         animationSpeed={3}
                         showBorder={false}
-                        className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold"
                       >
                         My GitHub
                       </GradientText>
-                    </Link>
-                    <TrueFocus
-                      sentence="Stay Calm"
-                      manualMode={false}
-                      blurAmount={5}
-                      borderColor="#6344F5"
-                      animationDuration={2}
-                      pauseBetweenAnimations={1}
-                    />
+                    </button>
+
                   </div>
                 </div>
               </div>
@@ -188,7 +191,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-          <Timeline data={data}/>
     </div>
   );
 }
