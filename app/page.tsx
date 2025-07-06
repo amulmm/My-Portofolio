@@ -139,25 +139,13 @@ export default function Home() {
                       onClick={() => window.location.href = 'mailto:achmadmiftahululum9@gmail.com'}
                       className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
                     >
-                      <GradientText
-                        colors={["#D9D9D9"]}
-                        animationSpeed={3}
-                        showBorder={false}
-                      >
                         Contact me now
-                      </GradientText>
                     </button>
                     <button
                       onClick={() => window.open('https://github.com/amulmm', '_blank')}
                       className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
                     >
-                      <GradientText
-                        colors={["#D9D9D9"]}
-                        animationSpeed={3}
-                        showBorder={false}
-                      >
                         My GitHub
-                      </GradientText>
                     </button>
 
                   </div>
