@@ -79,7 +79,7 @@ const page = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-hidden">
         <Navbar className="md:top-20">
         <NavBody>
           <NavbarLogo />
