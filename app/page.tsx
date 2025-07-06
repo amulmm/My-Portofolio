@@ -73,12 +73,12 @@ export default function Home() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      <div className="absolute top-0 right-0 left-0 bottom-0 w-full">
+      <div className="absolute top-0 right-0 left-0 bottom-0 w-full hidden md:block">
         <BackgroundBeams />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-0 md:pt-5 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
-          <div className="md:col-span-5 flex justify-center items-center">
+          <div className="md:col-span-5 flex justify-center items-center md:block">
             <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
           </div>
           <div className="md:col-span-7 flex flex-col justify-center items-start text-left">
@@ -88,10 +88,10 @@ export default function Home() {
                   distance={150}
                   direction="horizontal"
                   reverse={false}
-                  duration={1.2}
+                  duration={0.8}
                   threshold={0.2}
                   delay={0.3}
-                  ease="bounce.out"
+                  ease="power2.out"
                   initialOpacity={0.2}
                   animateOpacity
                   scale={1.1}
