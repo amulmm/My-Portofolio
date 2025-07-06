@@ -123,41 +123,17 @@ export default function Home() {
                   </div>
                 </AnimatedContent>
                 <div className="flex flex-col items-start">
-                  <SplitText
-                    text="I'm Achmad Miftahul Ulum"
-                    className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl"
-                    delay={50}
-                    duration={0.6}
-                    ease="power3.out"
-                    splitType="chars"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.2}
-                    rootMargin="-50px"
-                    textAlign="left"
-                  />
-                  <SplitText
-                    text="I'm a Medical Technology Student"
-                    className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl"
-                    delay={100}
-                    duration={0.6}
-                    ease="power3.out"
-                    splitType="chars"
-                    from={{ opacity: 0, y: 40 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.6}
-                    rootMargin="-50px"
-                    textAlign="left"
-                  />
+                  <h1 className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl">
+                    I'm Achmad Miftahul Ulum
+                  </h1>
+                  <h1 className="bg-clip-text items-start text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 font-sans font-bold text-xl sm:text-xl md:text-4xl lg:text-4xl">
+                    I'm a Medical Technology Student
+                  </h1>
                 </div>
                 <div>
-                  <BlurText
-                    text="Hi, I'm from Indonesia and study Medical Engineering at Hochschule Bremerhaven. My studies focus on databases, generative manufacturing, programming, and medical image processing. I've gained hands-on experience optimizing operations at Amazon and working with industrial robots at Mercedes Benz."
-                    delay={75}
-                    animateBy="words"
-                    direction="top"
-                    className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-left font-sans text-sm sm:text-base md:text-lg"
-                  />
+                  <div className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-left font-sans text-sm sm:text-base md:text-lg">
+                    Hi, I'm from Indonesia and study Medical Engineering at Hochschule Bremerhaven. My studies focus on databases, generative manufacturing, programming, and medical image processing. I've gained hands-on experience optimizing operations at Amazon and working with industrial robots at Mercedes Benz.
+                  </div>
                   <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
                     <button
                       onClick={() => window.location.href = 'mailto:achmadmiftahululum9@gmail.com'}
