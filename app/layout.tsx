@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Achmad Miftahul Ulum - Medical Engineering Student",
     description: "Portfolio of Achmad Miftahul Ulum, a passionate medical engineering student focus on medical informatics.",
-    url: "public/images/metadata.png", // Ganti dengan URL portofolio Anda
+    url: "https://amulmm.com/", // Ganti dengan URL portofolio Anda
     siteName: "Achmad Miftahul Ulum - Medical Engineering Student",
     images: [
       {
-        url: "https://your-portfolio-url.com/images/Logo.png", // Ganti dengan URL gambar OG Anda
+        url: "https://amulmm.com/images/metadata.png", // Ganti dengan URL gambar OG Anda
         width: 800,
         height: 600,
         alt: "Achmad Miftahul Ulum - Medical Engineering Student",
