@@ -134,6 +134,8 @@ export const NavItems = ({ items, className, onItemClick, isMobile }: NavItemsPr
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
           key={`link-${idx}`}
           href={item.link}
+          target={item.link.startsWith("http") ? "_blank" : undefined}
+          rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
         >
           {hovered === idx && (
             <motion.div
