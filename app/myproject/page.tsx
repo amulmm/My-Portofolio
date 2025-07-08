@@ -85,9 +85,9 @@ const page = () => {
           <NavbarLogo />
           <NavItems items={navItems} />
           <NavbarButton>
-            <Link href="https://www.linkedin.com/in/achmad-miftahul-ulum-84b92a237">
+            <a href="https://www.linkedin.com/in/achmad-miftahul-ulum-84b92a237" target="_blank" rel="noopener noreferrer">
              LinkedIn
-            </Link>
+            </a>
           </NavbarButton>
         </NavBody>
         <MobileNav>

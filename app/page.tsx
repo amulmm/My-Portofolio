@@ -52,9 +52,9 @@ export default function Home() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <NavbarButton>
-            <Link href="https://www.linkedin.com/in/achmad-miftahul-ulum-84b92a237">
+            <a href="https://www.linkedin.com/in/achmad-miftahul-ulum-84b92a237" target="_blank" rel="noopener noreferrer">
              LinkedIn
-            </Link>
+            </a>
           </NavbarButton>
         </NavBody>
         <MobileNav>
@@ -73,7 +73,7 @@ export default function Home() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      <div className="absolute top-0 right-0 left-0 bottom-0 w-full hidden md:block">
+      <div className="absolute top-0 right-0 left-0 bottom-0 w-full hidden md:block pointer-events-none">
         <BackgroundBeams />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-0 md:pt-5 pb-10">
@@ -135,18 +135,20 @@ export default function Home() {
                     Hi, I'm from Indonesia and study Medical Engineering at Hochschule Bremerhaven. My studies focus on databases, generative manufacturing, programming, and medical image processing. I've gained hands-on experience optimizing operations at Amazon and working with industrial robots at Mercedes Benz.
                   </div>
                   <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-                    <button
-                      onClick={() => window.location.href = 'mailto:achmadmiftahululum9@gmail.com'}
+                    <a
+                      href="mailto:achmadmiftahululum9@gmail.com"
                       className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
                     >
                         Contact me now
-                    </button>
-                    <button
-                      onClick={() => window.open('https://github.com/amulmm', '_blank')}
+                    </a>
+                    <a
+                      href="https://github.com/amulmm"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="px-4 py-2 rounded-lg border top-5 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold text-sm sm:text-base"
                     >
                         My GitHub
-                    </button>
+                    </a>
 
                   </div>
                 </div>
