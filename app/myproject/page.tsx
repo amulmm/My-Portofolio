@@ -67,7 +67,7 @@ const data = [
     },
     {
       name: "Resume",
-      link: "/resume/Lebenslauf-Ulum.pdf",
+      link: "/resume/Lebenslauf-ulum.pdf",
     },
     {
       name: "My Projects",
