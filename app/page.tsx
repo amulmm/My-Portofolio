@@ -1,12 +1,10 @@
-import Image from "next/image";
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import Lanyard from "./components/Lanyard/Lanyard";
 import RotatingText from "./components/RotatingText/RotatingText";
-import SplitText from "./components/SplitText/SplitText";
-import BlurText from "./components/BlurText/BlurText";
 import AnimatedContent from "./components/AnimatedContent/AnimatedContent";
-import GradientText from "./components/GradientText/GradientText";
 import {
   Navbar,
   NavBody,
@@ -21,8 +19,6 @@ import {
 import React, { useState } from "react";
 import { BackgroundBeams } from "./components/Beams/BeamsBackground";
 
-import Link from "next/link";
-
 export default function Home() {
   const navItems = [
     {
@@ -35,7 +31,7 @@ export default function Home() {
     },
     {
       name: "Resume",
-      link: "/resume/Lebenslauf_Achmad.pdf",
+      link: "/resume/Lebenslauf-Ulum.pdf",
     },
     {
       name: "My Projects",
@@ -149,7 +145,6 @@ export default function Home() {
                     >
                         My GitHub
                     </a>
-
                   </div>
                 </div>
               </div>
